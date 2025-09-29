@@ -2,12 +2,25 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import gym from "../../Assets/Projects/gymz.png";
+import carental from "../../Assets/Projects/car.png";
+import bizzup from "../../Assets/Projects/bizzup.png";
+import Eventz from "../../Assets/Projects/event.lk.png";
+import flyfish from "../../Assets/Projects/flying fish.png";
+import Wres from "../../Assets/Projects/WN Resturants.png";
+import Mres from "../../Assets/Projects/Resturant mobile.png";
+import dreamz from "../../Assets/Projects/dreamz.png";
+import Qr from "../../Assets/Projects/qr scanner.png";
+import travel from "../../Assets/Projects/travel.png";
+import treasurer from "../../Assets/Projects/treeasurer hunter.png";
+import flight from "../../Assets/Projects/flight app.png";
+import note from "../../Assets/Projects/noteapp.png";
+import cal from "../../Assets/Projects/claculatror.png";
+
+
+
+
+
 
 function Projects() {
   return (
@@ -23,68 +36,136 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={bizzup}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="BizzSup"
+              description="Online Customer Support System for Business - web application for handling customer queries and support requests, improving response
+efficiency by 30%."
+              ghLink="https://github.com/ChaminduWn/BizzSup"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={Eventz}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="Event.lk"
+              description="Online Event Management System - enabling event creation, user registration, and dynamic event
+listings, improving user engagement"
+              ghLink="https://github.com/ChaminduWn/Event.lk"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={gym}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="CJ Gym & Fitness"
+              description="The gym management system for CJ gym offers a comprehensive solution using MERN stack. It manages members, schedules, staff, subscriptions, finances, inventory, supplements, and provides personalized coaching. This helps streamline gym operations, boost member engagement, and grow the business."
+              ghLink="https://github.com/inupaUdara/gym-management-system"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={flyfish}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="The Flying Fish Game"
+              description="The Flying Fish is a simple Android game where players control a fish to avoid obstacles and collect points. The game ends when the fish runs out of lives, and the player's score and highest score are displayed on the game over screen."
+              ghLink="https://github.com/ChaminduWn/Android-Game-App"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={note}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              title="Note App"
+              description="The Note App is a feature-rich application built using Kotlin and developed in Android Studio and using SharedPreferences. This app allows users to create, modify, and delete tasks, set reminders with alarms, and use a built-in focus timer to enhance productivity. It is fully compatible with Android devices."
+              ghLink="https://github.com/ChaminduWn/Note-App"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={carental}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="Car Rental App"
+              description="A Flutter-based mobile application for renting premium cars, integrated with Firebase Firestore for real-time data management. The app features a luxurious and responsive UI, structured with BLoC architecture, and supports cross-platform deployment on Android, iOS, and Web."
+              ghLink="https://github.com/ChaminduWn/Car_Rental"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Wres}
+              isBlog={false}
+              title="WN Restaurant - Restaurant Management System (MERN)"
+              description="restaurant management system built using the MERN (MongoDB, Express.js, React.js, Node.js) stack and styled with Tailwind CSS. This application provides a seamless experience for customers and management alike, supporting menu browsing, ordering, payments, and user management functionalities."
+              ghLink="https://github.com/ChaminduWn/Resturant"
+            />
+          </Col>
+           <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Mres}
+              isBlog={false}
+              title="WN Restaurant - Restaurant Mobile App (React Native)"
+              description="React Native application developed using Expo Go. This mobile app serves as the user-facing counterpart to the Restaurant Management Web App (https://github.com/ChaminduWn/Resturant) and is designed to work seamlessly with the same backend and database."
+              ghLink="https://github.com/ChaminduWn/Restaurant-MobileApp"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={dreamz}
+              isBlog={false}
+              title="FairyTalePlanner - Wedding Planning System (MERN)"
+              description="A vibrant MERN-powered platform that transforms wedding planning into a magical, stress-free journey! 🎉 Built with MongoDB, Express.js, React, and Node.js, and styled with the sleek Tailwind CSS, Dreams is your one-stop network for all things weddings — from stunning venues to dreamy services like car rentals, bridal styling, and unique gifts. Whether you're a couple planning your big day or a vendor showcasing your services, Dreams makes every moment sparkle!"
+              ghLink="https://github.com/ChaminduWn/FairyTalePlanner"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Qr}
+              isBlog={false}
+              title="WN QR - QR Code Scanner (Flutter)"
+              description="WN QR Scanner & Generator is a Flutter-based mobile application that allows users to scan and generate QR codes with ease. The app supports various types of QR codes, including text, URLs, and contact information. It also provides features like sharing QR codes, saving scanned contact information, and opening URLs directly from the app."
+              ghLink="https://github.com/ChaminduWn/Qr-Scanner-Flutter"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={travel}
+              isBlog={false}
+              title="Travel Management Learning Platform (Spring Boot)"
+              description="web application combining travel planning and learning features, enabling 500+ users to
+organize trips and access educational content on a single platform"
+              ghLink="https://github.com/ChaminduWn/Travel-Management-Learning-Platform"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={treasurer}
+              isBlog={false}
+              title="Treasurer Hunter"
+              description="A simple Python game using the Turtle graphics library where the player navigates through a maze to collect eggs and avoid enemies."
+              ghLink="https://github.com/ChaminduWn/Hidden-Treasure-Game"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={flight}
+              isBlog={false}
+              title="Flight Booking Website"
+              description="A responsive travel booking website that allows users to search flights, book tickets, and learn about the booking process with a clean and intuitive user interface. Built using React.js and TailwindCSS."
+              ghLink="https://github.com/ChaminduWn/Flight-App"
+            />
+          </Col>
+            <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={cal}
+              isBlog={false}
+              title="Calculator App"
+              description="This Android application provides a simple calculator interface for performing basic arithmetic operations. It features a clean UI with buttons for numbers, operators, and parentheses, along with an input and output display area. The calculator supports addition, subtraction, multiplication, division, modulus, and decimal operations. Error handling ensures that invalid expressions are handled gracefully."
+              ghLink="https://github.com/ChaminduWn/Android-Calculator-App"
             />
           </Col>
         </Row>
