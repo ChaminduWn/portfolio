@@ -1,7 +1,9 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+
+// Import project images
 import gym from "../../Assets/Projects/gymz.png";
 import carental from "../../Assets/Projects/car.png";
 import bizzup from "../../Assets/Projects/bizzup.png";
@@ -17,12 +19,121 @@ import flight from "../../Assets/Projects/flight app.png";
 import note from "../../Assets/Projects/noteapp.png";
 import cal from "../../Assets/Projects/claculatror.png";
 
-
-
-
-
-
 function Projects() {
+  // Project data in an array with tags (web / mobile)
+  const projects = [
+    {
+      imgPath: bizzup,
+      title: "BizzSup",
+      description:
+        "Online Customer Support System for Business - web application for handling customer queries.",
+      ghLink: "https://github.com/ChaminduWn/BizzSup",
+      type: "web",
+    },
+    {
+      imgPath: Eventz,
+      title: "Event.lk",
+      description: "Online Event Management System with event creation and registration.",
+      ghLink: "https://github.com/ChaminduWn/Event.lk",
+      type: "web",
+    },
+    {
+      imgPath: gym,
+      title: "CJ Gym & Fitness",
+      description: "Gym management system (MERN stack) for schedules, members, and finances.",
+      ghLink: "https://github.com/inupaUdara/gym-management-system",
+      type: "web",
+    },
+    {
+      imgPath: flyfish,
+      title: "The Flying Fish Game",
+      description: "Android game where players control a fish to avoid obstacles and collect points.",
+      ghLink: "https://github.com/ChaminduWn/Android-Game-App",
+      type: "mobile",
+    },
+    {
+      imgPath: note,
+      title: "Note App",
+      description: "Kotlin Android app for notes, reminders, and productivity tools.",
+      ghLink: "https://github.com/ChaminduWn/Note-App",
+      type: "mobile",
+    },
+    {
+      imgPath: carental,
+      title: "Car Rental App",
+      description: "Flutter app for renting premium cars, Firebase integration, cross-platform.",
+      ghLink: "https://github.com/ChaminduWn/Car_Rental",
+      type: "mobile",
+    },
+    {
+      imgPath: Wres,
+      title: "WN Restaurant - Web App",
+      description: "Restaurant Management System (MERN) with ordering, payments & user management.",
+      ghLink: "https://github.com/ChaminduWn/Resturant",
+      type: "web",
+    },
+    {
+      imgPath: Mres,
+      title: "WN Restaurant - Mobile App",
+      description: "React Native app (Expo Go) connected to the Restaurant Management backend.",
+      ghLink: "https://github.com/ChaminduWn/Restaurant-MobileApp",
+      type: "mobile",
+    },
+    {
+      imgPath: dreamz,
+      title: "FairyTalePlanner - Wedding Planning System",
+      description: "MERN-powered platform for wedding planning & vendor management.",
+      ghLink: "https://github.com/ChaminduWn/FairyTalePlanner",
+      type: "web",
+    },
+    {
+      imgPath: Qr,
+      title: "WN QR - QR Code Scanner",
+      description: "Flutter app for scanning and generating QR codes.",
+      ghLink: "https://github.com/ChaminduWn/Qr-Scanner-Flutter",
+      type: "mobile",
+    },
+    {
+      imgPath: travel,
+      title: "Travel Management Learning Platform",
+      description: "Spring Boot web app combining travel planning and learning features.",
+      ghLink: "https://github.com/ChaminduWn/Travel-Management-Learning-Platform",
+      type: "web",
+    },
+    {
+      imgPath: treasurer,
+      title: "Treasurer Hunter",
+      description: "Python Turtle graphics game collecting treasures and avoiding enemies.",
+      ghLink: "https://github.com/ChaminduWn/Hidden-Treasure-Game",
+      type: "web",
+    },
+    {
+      imgPath: flight,
+      title: "Flight Booking Website",
+      description: "React.js + TailwindCSS responsive travel booking web app.",
+      ghLink: "https://github.com/ChaminduWn/Flight-App",
+      type: "web",
+    },
+    {
+      imgPath: cal,
+      title: "Calculator App",
+      description: "Android calculator with arithmetic operations & error handling.",
+      ghLink: "https://github.com/ChaminduWn/Android-Calculator-App",
+      type: "mobile",
+    },
+  ];
+
+  // State for search and filter
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("all");
+
+  // Filter logic
+  const filteredProjects = projects.filter((project) => {
+    const matchesSearch = project.title.toLowerCase().includes(search.toLowerCase());
+    const matchesFilter = filter === "all" || project.type === filter;
+    return matchesSearch && matchesFilter;
+  });
+
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -31,143 +142,50 @@ function Projects() {
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here are some projects I've worked on — filter by type or search by name.
         </p>
+
+        {/* 🔍 Search + Filter */}
+        <div className="project-filters" style={{ position: "relative", zIndex: 10 }}>
+          <Form.Control
+            type="text"
+            placeholder="Search projects..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{ position: "relative", zIndex: 10 }}
+          />
+          <div className="filter-buttons" style={{ position: "relative", zIndex: 10 }}>
+            <button
+              className={filter === "all" ? "btn-active" : "btn-inactive"}
+              onClick={() => setFilter("all")}
+              style={{ pointerEvents: "auto", cursor: "pointer" }}
+            >
+              All
+            </button>
+            <button
+              className={filter === "web" ? "btn-active" : "btn-inactive"}
+              onClick={() => setFilter("web")}
+              style={{ pointerEvents: "auto", cursor: "pointer" }}
+            >
+              Web
+            </button>
+            <button
+              className={filter === "mobile" ? "btn-active" : "btn-inactive"}
+              onClick={() => setFilter("mobile")}
+              style={{ pointerEvents: "auto", cursor: "pointer" }}
+            >
+              Mobile
+            </button>
+          </div>
+        </div>
+
+        {/* Project Grid */}
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bizzup}
-              isBlog={false}
-              title="BizzSup"
-              description="Online Customer Support System for Business - web application for handling customer queries and support requests, improving response
-efficiency by 30%."
-              ghLink="https://github.com/ChaminduWn/BizzSup"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Eventz}
-              isBlog={false}
-              title="Event.lk"
-              description="Online Event Management System - enabling event creation, user registration, and dynamic event
-listings, improving user engagement"
-              ghLink="https://github.com/ChaminduWn/Event.lk"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={gym}
-              isBlog={false}
-              title="CJ Gym & Fitness"
-              description="The gym management system for CJ gym offers a comprehensive solution using MERN stack. It manages members, schedules, staff, subscriptions, finances, inventory, supplements, and provides personalized coaching. This helps streamline gym operations, boost member engagement, and grow the business."
-              ghLink="https://github.com/inupaUdara/gym-management-system"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={flyfish}
-              isBlog={false}
-              title="The Flying Fish Game"
-              description="The Flying Fish is a simple Android game where players control a fish to avoid obstacles and collect points. The game ends when the fish runs out of lives, and the player's score and highest score are displayed on the game over screen."
-              ghLink="https://github.com/ChaminduWn/Android-Game-App"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={note}
-              isBlog={false}
-              title="Note App"
-              description="The Note App is a feature-rich application built using Kotlin and developed in Android Studio and using SharedPreferences. This app allows users to create, modify, and delete tasks, set reminders with alarms, and use a built-in focus timer to enhance productivity. It is fully compatible with Android devices."
-              ghLink="https://github.com/ChaminduWn/Note-App"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={carental}
-              isBlog={false}
-              title="Car Rental App"
-              description="A Flutter-based mobile application for renting premium cars, integrated with Firebase Firestore for real-time data management. The app features a luxurious and responsive UI, structured with BLoC architecture, and supports cross-platform deployment on Android, iOS, and Web."
-              ghLink="https://github.com/ChaminduWn/Car_Rental"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Wres}
-              isBlog={false}
-              title="WN Restaurant - Restaurant Management System (MERN)"
-              description="restaurant management system built using the MERN (MongoDB, Express.js, React.js, Node.js) stack and styled with Tailwind CSS. This application provides a seamless experience for customers and management alike, supporting menu browsing, ordering, payments, and user management functionalities."
-              ghLink="https://github.com/ChaminduWn/Resturant"
-            />
-          </Col>
-           <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Mres}
-              isBlog={false}
-              title="WN Restaurant - Restaurant Mobile App (React Native)"
-              description="React Native application developed using Expo Go. This mobile app serves as the user-facing counterpart to the Restaurant Management Web App (https://github.com/ChaminduWn/Resturant) and is designed to work seamlessly with the same backend and database."
-              ghLink="https://github.com/ChaminduWn/Restaurant-MobileApp"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={dreamz}
-              isBlog={false}
-              title="FairyTalePlanner - Wedding Planning System (MERN)"
-              description="A vibrant MERN-powered platform that transforms wedding planning into a magical, stress-free journey! 🎉 Built with MongoDB, Express.js, React, and Node.js, and styled with the sleek Tailwind CSS, Dreams is your one-stop network for all things weddings — from stunning venues to dreamy services like car rentals, bridal styling, and unique gifts. Whether you're a couple planning your big day or a vendor showcasing your services, Dreams makes every moment sparkle!"
-              ghLink="https://github.com/ChaminduWn/FairyTalePlanner"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Qr}
-              isBlog={false}
-              title="WN QR - QR Code Scanner (Flutter)"
-              description="WN QR Scanner & Generator is a Flutter-based mobile application that allows users to scan and generate QR codes with ease. The app supports various types of QR codes, including text, URLs, and contact information. It also provides features like sharing QR codes, saving scanned contact information, and opening URLs directly from the app."
-              ghLink="https://github.com/ChaminduWn/Qr-Scanner-Flutter"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={travel}
-              isBlog={false}
-              title="Travel Management Learning Platform (Spring Boot)"
-              description="web application combining travel planning and learning features, enabling 500+ users to
-organize trips and access educational content on a single platform"
-              ghLink="https://github.com/ChaminduWn/Travel-Management-Learning-Platform"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={treasurer}
-              isBlog={false}
-              title="Treasurer Hunter"
-              description="A simple Python game using the Turtle graphics library where the player navigates through a maze to collect eggs and avoid enemies."
-              ghLink="https://github.com/ChaminduWn/Hidden-Treasure-Game"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={flight}
-              isBlog={false}
-              title="Flight Booking Website"
-              description="A responsive travel booking website that allows users to search flights, book tickets, and learn about the booking process with a clean and intuitive user interface. Built using React.js and TailwindCSS."
-              ghLink="https://github.com/ChaminduWn/Flight-App"
-            />
-          </Col>
-            <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={cal}
-              isBlog={false}
-              title="Calculator App"
-              description="This Android application provides a simple calculator interface for performing basic arithmetic operations. It features a clean UI with buttons for numbers, operators, and parentheses, along with an input and output display area. The calculator supports addition, subtraction, multiplication, division, modulus, and decimal operations. Error handling ensures that invalid expressions are handled gracefully."
-              ghLink="https://github.com/ChaminduWn/Android-Calculator-App"
-            />
-          </Col>
+          {filteredProjects.map((project, index) => (
+            <Col md={4} className="project-card" key={index}>
+              <ProjectCard {...project} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>

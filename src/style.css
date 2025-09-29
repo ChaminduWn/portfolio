@@ -453,35 +453,244 @@ button:focus {
 /* --------- */
 /* Projects */
 /* --------- */
+/* ===== PROJECT SECTION ===== */
 .project-section {
-  position: relative !important;
+  position: relative;
+  z-index: 1;
+  background-image: var(--image-gradient), url(./Assets/bf.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  padding-bottom: 50px !important;
+  min-height: 100vh;
 }
 
+.project-heading {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ===== SEARCH & FILTER BAR ===== */
+.project-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 30px auto 50px;
+  max-width: 600px;
+  position: relative;
+  z-index: 100;
+}
+
+.project-filters input {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid #8a49a8;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.project-filters input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.project-filters input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #c770f0;
+  box-shadow: 0 0 15px rgba(199, 112, 240, 0.5);
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+}
+
+.filter-buttons button {
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer !important;
+  pointer-events: all !important;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  position: relative;
+  z-index: 100;
+  user-select: none;
+}
+
+.btn-active {
+  background-color: #c770f0;
+  color: white;
+  border-color: #c770f0;
+  box-shadow: 0 4px 15px rgba(199, 112, 240, 0.4);
+}
+
+.btn-active:hover {
+  background-color: #b65cd9;
+  border-color: #b65cd9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199, 112, 240, 0.6);
+}
+
+.btn-inactive {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-inactive:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #c770f0;
+  transform: translateY(-2px);
+}
+
+/* ===== PROJECT CARDS ===== */
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
+  padding: 20px !important;
+  position: relative;
+  z-index: 10;
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
   color: white !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+  border-radius: 12px !important;
+  transition: all 0.4s ease !important;
   height: 100% !important;
-}
-.project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  border: 1px solid rgba(138, 73, 168, 0.3) !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
+.project-card-view:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 30px rgba(199, 112, 240, 0.4) !important;
+  border-color: #c770f0 !important;
+}
+
+.project-card-view img {
+  border-radius: 12px 12px 0 0 !important;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card-view:hover img {
+  transform: scale(1.05);
+}
+
+.project-card-view .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-view .card-title {
+  font-weight: 700;
+  color: #e0c3ff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.project-card-view .card-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* ===== PROJECT CARD BUTTONS ===== */
+.project-card-view .btn {
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer !important;
+  pointer-events: all !important;
+  position: relative;
+  z-index: 10;
+}
+
+.project-card-view .btn-primary {
+  background-color: #c770f0;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.project-card-view .btn-primary:hover {
+  background-color: #a64dd3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(199, 112, 240, 0.5);
+}
+
+.project-card-view .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 2rem;
+  }
+
+  .project-filters {
+    max-width: 90%;
+  }
+
+  .filter-buttons button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .project-card-view .card-title {
+    font-size: 1.2rem;
+  }
+
+  .project-card-view .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+.filter-buttons button:focus,
+.project-card-view .btn:focus {
+  outline: 2px solid #c770f0;
+  outline-offset: 2px;
+}
+
+/* Ensure particles don't interfere with clicks */
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
 .blog-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;
