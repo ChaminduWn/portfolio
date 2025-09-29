@@ -610,21 +610,32 @@ button:focus {
 /* --------- */
 /* Resume */
 /* --------- */
-
+/* Resume Section */
 .resume-section {
+    position: relative;
+  z-index: -1;
+  background-image: var(--image-gradient), url(./Assets/bf.jpg);
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* no tiling */
+  background-size: cover; /* makes it cover the whole container */
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
   position: relative !important;
   padding-top: 110px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
+  padding-bottom: 50px !important;
+  background-color: #2a1a3d; /* Darker purple background */
+  color: #ffffff !important;
+  min-height: 100vh;
 }
 
+/* Resume Container */
 .resume {
   padding-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
 }
 
+/* Left and Right Columns */
 .resume-left {
   padding-right: 80px !important;
 }
@@ -633,65 +644,103 @@ button:focus {
   padding-left: 80px !important;
 }
 
+/* Mobile adjustments */
 @media (max-width: 767px) {
-  .resume-left {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-
+  .resume-left,
   .resume-right {
     padding-right: 15px !important;
     padding-left: 15px !important;
   }
 }
+
+/* Section title */
 .resume .resume-title {
   font-size: 2em;
   font-weight: 700;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 0;
+  color: #d1b3ff; /* light purple for headings */
+  border-bottom: 2px solid #8a49a8;
 }
 
+/* Resume Items */
 .resume .resume-item {
-  padding: 0 0 10px 25px;
+  padding: 0 0 15px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  border-left: 2px solid #8a49a8; /* highlight line */
   position: relative;
+  transition: all 0.3s ease;
 }
 
+.resume .resume-item:hover {
+  background: rgba(82, 52, 121, 0.2); /* subtle hover effect */
+  padding-left: 30px;
+}
+
+/* Resume item title */
 .resume .resume-item .resume-title {
   line-height: 18px;
-  font-size: 0.9em;
-  background: #5234795d;
+  font-size: 1em;
+  background: rgba(82, 52, 121, 0.6);
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  color: #ffffff;
+  border-radius: 6px;
 }
 
+/* List styling */
 .resume .resume-item ul {
   padding-left: 20px;
   text-align: justify;
 }
 
 .resume .resume-item ul li {
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   list-style: none;
+  position: relative;
 }
 
+.resume .resume-item ul li::before {
+  content: "•";
+  color: #d1b3ff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Last item */
 .resume .resume-item:last-child {
   padding-bottom: 0;
 }
 
+/* Circular bullet */
 .resume .resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
   height: 16px;
-  border-radius: 50px;
+  border-radius: 50%;
   left: -9px;
   top: 0;
-  background: #fff;
+  background: #ffffff;
   border: 2px solid #8a49a8;
+}
+
+/* Buttons */
+.resume-section .btn-primary {
+  background-color: #8a49a8;
+  border-color: #8a49a8;
+  color: #ffffff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.resume-section .btn-primary:hover {
+  background-color: #d1b3ff;
+  border-color: #d1b3ff;
+  color: #2a1a3d;
 }
 
 .like-item {
