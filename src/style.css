@@ -257,9 +257,10 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
+  background-image: var(--image-gradient), url(./Assets/bh.jpg);
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* no tiling */
+  background-size: cover; /* makes it cover the whole container */
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
@@ -271,7 +272,7 @@ button:focus {
 }
 
 .heading {
-  font-size: 2.4em !important;
+  font-size: 4.4em !important;
   padding-left: 50px !important;
 }
 
@@ -318,10 +319,18 @@ button:focus {
 }
 
 .home-about-section {
+  z-index: -1;
+
+  background-image: var(--image-gradient), url(./Assets/bd.jpg);
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* no tiling */
+  background-size: cover; /* makes it cover the whole container */
+  
   position: relative;
-  padding-bottom: 70px !important;
   padding-top: 70px !important;
+  padding-bottom: 70px !important;
 }
+
 
 .home-about-description {
   color: white !important;

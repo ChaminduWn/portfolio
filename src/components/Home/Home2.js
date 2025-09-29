@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/home-main.svg";
+import Particle from "../Particle";
+
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -19,37 +21,24 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> MERN Stack, Flutter , Java. </b>
-              </i>
+              Hi! I'm <b className="purple">W. Nilusha Chamindu</b>, a passionate tech enthusiast and explorer from Sri Lanka. 
+              I fell in love with programming 💻 and enjoy learning new technologies and building projects that make an impact. 🤷‍♂️
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Mobile App development
-                </b>
-              </i>
+              I am fluent in <i><b className="purple">MERN Stack, Flutter, Kotlin, and Java</b></i>.
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
+              My interests include creating innovative and valuable <i><b className="purple">technologies and products</b></i>, 
+              especially in <i><b className="purple">Web & Mobile App Development</b></i>.
+              <br />
+              <br />
+              I am constantly seeking opportunities to grow my skills, explore new frameworks, and contribute to meaningful projects. 
+              I particularly enjoy developing products using <b className="purple">MERN Stack, Flutter, React Native, Kotlin</b> and 
+              <i><b className="purple"> modern JavaScript libraries and frameworks</b></i> like 
+              <i><b className="purple"> React.js and Next.js</b></i>.
+              <br />
+              <br />
+              Outside of coding, I enjoy keeping up with tech trends, collaborating with fellow developers 🤝, and bringing creative ideas to life.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -70,7 +59,7 @@ function Home2() {
                   href="https://github.com/ChaminduWn"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -80,7 +69,7 @@ function Home2() {
                   href="https://x.com/chamindu_wn"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiOutlineTwitter />
                 </a>
@@ -90,7 +79,7 @@ function Home2() {
                   href="https://www.linkedin.com/in/chaminduwn/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -112,4 +101,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;
