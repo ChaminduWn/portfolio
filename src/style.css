@@ -826,7 +826,7 @@ position: relative;
 /* Resume Section */
 .resume-section {
     position: relative;
-  z-index: -1;
+  z-index: 1;
   background-image: var(--image-gradient), url(./Assets/bf.jpg);
   background-position: center; /* centers the image */
   background-repeat: no-repeat; /* no tiling */

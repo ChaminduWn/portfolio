@@ -4,20 +4,20 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 
 // Import project images
-import gym from "../../Assets/Projects/gymz.png";
+import gym from "../../Assets/Projects/gym.png";
 import carental from "../../Assets/Projects/car.png";
-import bizzup from "../../Assets/Projects/bizzup.png";
-import Eventz from "../../Assets/Projects/event.lk.png";
-import flyfish from "../../Assets/Projects/flying fish.png";
+import bizzup from "../../Assets/Projects/bizz.png";
+import Eventz from "../../Assets/Projects/event.png";
+import flyfish from "../../Assets/Projects/fly.png";
 import Wres from "../../Assets/Projects/WN Resturants.png";
 import Mres from "../../Assets/Projects/Resturant mobile.png";
-import dreamz from "../../Assets/Projects/dreamz.png";
+import dreamz from "../../Assets/Projects/wed.png";
 import Qr from "../../Assets/Projects/qr scanner.png";
 import travel from "../../Assets/Projects/travel.png";
 import treasurer from "../../Assets/Projects/treeasurer hunter.png";
 import flight from "../../Assets/Projects/flight app.png";
 import note from "../../Assets/Projects/noteapp.png";
-import cal from "../../Assets/Projects/claculatror.png";
+import cal from "../../Assets/Projects/cal5.jpg";
 
 function Projects() {
   // Project data in an array with tags (web / mobile)
