@@ -761,10 +761,14 @@ button:focus {
 /* --------- */
 
 .about-section {
-  position: relative !important;
-  padding-top: 150px !important;
+position: relative;
+  z-index: -1;
+  background-image: var(--image-gradient), url(./Assets/e.jpg);
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat; /* no tiling */
+  background-size: cover; /* makes it cover the whole container */  padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 
