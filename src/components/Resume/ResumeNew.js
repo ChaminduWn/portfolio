@@ -15,6 +15,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -38,10 +39,26 @@ function ResumeNew() {
           </Button>
         </Row>
 
-        <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
+        <Row className="resume" style={{ justifyContent: "center" }}>
+          {error ? (
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
+              <p>
+                ⚠️ Failed to load the PDF preview.{" "}
+                <a href={pdf} target="_blank" rel="noopener noreferrer">
+                  Click here to download
+                </a>{" "}
+                instead.
+              </p>
+            </div>
+          ) : (
+            <Document
+              file={pdf}
+              className="d-flex justify-content-center"
+              onLoadError={() => setError(true)}
+            >
+              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            </Document>
+          )}
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
