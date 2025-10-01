@@ -43,7 +43,7 @@ function ResumeNew() {
           {error ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               <p>
-                ⚠️ Failed to load the PDF preview.  Click 👇 to download instead.          
+                Click 👇 to download           
                                
                 
               </p>
