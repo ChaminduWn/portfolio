@@ -23,13 +23,13 @@ function Projects() {
   // Project data in an array with tags (web / mobile)
   const projects = [
     {
-      imgPath: bizzup,
-      title: "BizzSup",
-      description:
-        "BizzSup is an online customer support system for businesses, developed using PHP, HTML, CSS, JavaScript, and MySQL, hosted locally via XAMPP. The platform features a user-friendly interface with dynamic interactions, allowing businesses to manage customer inquiries efficiently. Built with clean PHP backend scripts, styled with external CSS, and enhanced with JavaScript, BizzSup provides a visually appealing and functional solution for online customer support.",
-      ghLink: "https://github.com/ChaminduWn/BizzSup",
-      type: "web",
+      imgPath: note,
+      title: "Note App",
+      description: "Android application built with Kotlin that helps users manage tasks efficiently. It allows creating, editing, and deleting tasks, setting reminders with alarms, and includes a Pomodoro-style focus timer to boost productivity. Built using ConstraintLayout, RecyclerView, and CardView, it leverages SharedPreferences for state management and AlarmManager for notifications, ensuring a smooth and user-friendly experience on Android devices.",
+      ghLink: "https://github.com/ChaminduWn/Note-App",
+      type: "mobile",
     },
+    
     {
       imgPath: Eventz,
       title: "Event.lk",
@@ -51,19 +51,21 @@ function Projects() {
       ghLink: "https://github.com/ChaminduWn/Android-Game-App",
       type: "mobile",
     },
-    {
-      imgPath: note,
-      title: "Note App",
-      description: "Android application built with Kotlin that helps users manage tasks efficiently. It allows creating, editing, and deleting tasks, setting reminders with alarms, and includes a Pomodoro-style focus timer to boost productivity. Built using ConstraintLayout, RecyclerView, and CardView, it leverages SharedPreferences for state management and AlarmManager for notifications, ensuring a smooth and user-friendly experience on Android devices.",
-      ghLink: "https://github.com/ChaminduWn/Note-App",
-      type: "mobile",
-    },
+    
     {
       imgPath: carental,
       title: "Car Rental App",
       description: "A Flutter-based mobile application for renting premium cars, integrated with Firebase Firestore for real-time data management. The app features a luxurious and responsive UI, structured with BLoC architecture, and supports cross-platform deployment on Android, iOS, and Web.",
       ghLink: "https://github.com/ChaminduWn/Car_Rental",
       type: "mobile",
+    },
+    {
+      imgPath: bizzup,
+      title: "BizzSup",
+      description:
+        "BizzSup is an online customer support system for businesses, developed using PHP, HTML, CSS, JavaScript, and MySQL, hosted locally via XAMPP. The platform features a user-friendly interface with dynamic interactions, allowing businesses to manage customer inquiries efficiently. Built with clean PHP backend scripts, styled with external CSS, and enhanced with JavaScript, BizzSup provides a visually appealing and functional solution for online customer support.",
+      ghLink: "https://github.com/ChaminduWn/BizzSup",
+      type: "web",
     },
     {
       imgPath: Wres,
