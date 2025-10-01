@@ -25,14 +25,14 @@ It showcases my skills, projects, and experience, and also includes my resume (P
 
 ## 📂 Project Structure
 portfolio/
-├── public/
-│ ├── index.html
-│ └── favicon.ico
-├── src/
-│ ├── Assets/ # Images, Resume (PDF), Icons
-│ ├── components/ # Reusable UI Components
-│ ├── App.js
-│ └── index.js
-├── package.json
-└── README.md
+- ├── public/
+- │ ├── index.html
+- │ └── favicon.ico
+- ├── src/
+- │ ├── Assets/ # Images, Resume (PDF), Icons
+- │ ├── components/ # Reusable UI Components
+- │ ├── App.js
+- │ └── index.js
+- ├── package.json
+- └── README.md
 
