@@ -24,6 +24,7 @@ It showcases my skills, projects, and experience, and also includes my resume (P
 - **Deployment:** GitHub Pages / Vercel / Netlify (choose based on your setup)
 
 ## 📂 Project Structure
+
 portfolio/
 - ├── public/
 - │ ├── index.html
@@ -35,4 +36,13 @@ portfolio/
 - │ └── index.js
 - ├── package.json
 - └── README.md
+
+  ## 🎥 Screen Record
+
+
+https://github.com/user-attachments/assets/109a085b-e718-4c68-9d8f-ce7165ee5422
+
+
+
+
 
