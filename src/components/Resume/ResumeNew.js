@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import React from "react";
+import { Container, Row,Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
+import {  pdfjs } from "react-pdf";
+import laptopImg from "../../Assets/resume.png";
 
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -14,12 +15,12 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [error, setError] = useState(false);
+  // const [width, setWidth] = useState(1200);
+  // // const [error, setError] = useState(false);
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // }, []);
 
   const pdf = process.env.PUBLIC_URL + "/chamindu_cv.pdf";
 
@@ -27,7 +28,7 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        {/* <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
             href={pdf}
@@ -37,9 +38,9 @@ function ResumeNew() {
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
-        </Row>
+        </Row> */}
 
-        <Row className="resume" style={{ justifyContent: "center" }}>
+        {/* <Row className="resume" style={{ justifyContent: "center" }}>
           {error ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               <p>
@@ -57,7 +58,16 @@ function ResumeNew() {
               <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
             </Document>
           )}
-        </Row>
+        </Row> */}
+        <Row style={{ justifyContent: "center", padding: "5px" }}>
+          <Col
+            md={5}
+            style={{ paddingTop: "5px", paddingBottom: "50px" }}
+            className="about-img"
+          >
+            <img src={laptopImg} alt="about" className="img-fluid" />
+          </Col>
+          </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
@@ -67,7 +77,7 @@ function ResumeNew() {
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp; View & Download CV
           </Button>
         </Row>
       </Container>
