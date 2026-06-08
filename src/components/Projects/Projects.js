@@ -18,10 +18,27 @@ import treasurer from "../../Assets/Projects/treeasurer hunter.png";
 import flight from "../../Assets/Projects/flight app.png";
 import note from "../../Assets/Projects/noteapp.png";
 import cal from "../../Assets/Projects/cal5.jpg";
+import aura from "../../Assets/Projects/aura.png";
+import libracore from "../../Assets/Projects/libracore.png";
 
 function Projects() {
   // Project data in an array with tags (web / mobile)
   const projects = [
+    {
+      imgPath: aura,
+      title: "Aura - Greenhouse AI Monitoring System",
+      description: "Developed an intelligent IoT-based greenhouse monitoring system that collects real-time environmental data using sensors and analyzes it using Google Gemini AI. The system provides recommendations, email summaries, TFT display monitoring, visual and audible alerts, and automated issue detection to optimize greenhouse conditions.",
+      ghLink: "https://github.com/ChaminduWn/Aura",
+      type: "iot",
+    },
+    {
+      imgPath: libracore,
+      title: "LibraCore - Library Management System",
+      description: "Developed a comprehensive library management platform supporting book inventory management, lending and borrowing operations, user management, transaction history tracking, and rental management. Implemented administrative features for managing books, users, and borrowing records efficiently.",
+      ghFrontend: "https://github.com/ChaminduWn/library_management_system_frontend",
+      ghBackend: "https://github.com/ChaminduWn/library_management_system_backend",
+      type: "web",
+    },
     {
       imgPath: note,
       title: "Note App",
@@ -177,6 +194,13 @@ function Projects() {
               style={{ pointerEvents: "auto", cursor: "pointer" }}
             >
               Mobile
+            </button>
+            <button
+              className={filter === "iot" ? "btn-active" : "btn-inactive"}
+              onClick={() => setFilter("iot")}
+              style={{ pointerEvents: "auto", cursor: "pointer" }}
+            >
+              IoT / AI
             </button>
           </div>
         </div>

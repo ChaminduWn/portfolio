@@ -25,23 +25,61 @@ function ProjectCards(props) {
           flexWrap: "wrap",
           gap: "10px"
         }}>
-          <Button 
-            variant="primary" 
-            href={props.ghLink} 
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              cursor: "pointer",
-              pointerEvents: "auto",
-              position: "relative",
-              zIndex: 10
-            }}
-          >
-            <BsGithub size={18} />
-            <span style={{ marginLeft: "8px" }}>
-              {props.isBlog ? "Blog" : "GitHub"}
-            </span>
-          </Button>
+          {props.ghLink && (
+            <Button 
+              variant="primary" 
+              href={props.ghLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                cursor: "pointer",
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 10
+              }}
+            >
+              <BsGithub size={18} />
+              <span style={{ marginLeft: "8px" }}>
+                {props.isBlog ? "Blog" : "GitHub"}
+              </span>
+            </Button>
+          )}
+
+          {props.ghFrontend && (
+            <Button 
+              variant="primary" 
+              href={props.ghFrontend} 
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                cursor: "pointer",
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 10
+              }}
+            >
+              <BsGithub size={18} />
+              <span style={{ marginLeft: "8px" }}>Frontend Git</span>
+            </Button>
+          )}
+
+          {props.ghBackend && (
+            <Button 
+              variant="primary" 
+              href={props.ghBackend} 
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                cursor: "pointer",
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 10
+              }}
+            >
+              <BsGithub size={18} />
+              <span style={{ marginLeft: "8px" }}>Backend Git</span>
+            </Button>
+          )}
 
           {!props.isBlog && props.demoLink && (
             <Button
