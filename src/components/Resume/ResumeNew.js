@@ -1,31 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-
-import "react-pdf/dist/Page/TextLayer.css";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-
-// Configure pdfjs worker to use CDN matching the package version
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
+import "./Resume.css";
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   const pdf = process.env.PUBLIC_URL + "/chamindu_cv.pdf";
 
   return (
@@ -33,62 +13,78 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
         
-        {/* Top Download Button */}
-        <Row style={{ justifyContent: "center", position: "relative", marginBottom: "30px", zIndex: 10 }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px", pointerEvents: "auto", cursor: "pointer" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        <Container className="resume-container">
+          {/* Professional Resume Header */}
+          <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+            <Col md={8} style={{ textAlign: "center" }}>
+              <h1 className="resume-heading" style={{ marginBottom: "20px" }}>
+                My <span className="purple">Professional CV</span>
+              </h1>
+              <p className="resume-subtitle">
+                Full-Stack Software Engineer | React • Next.js • Node.js • Spring Boot
+              </p>
+            </Col>
+          </Row>
 
-        {/* PDF Document Render Container */}
-        <Row className="resume" style={{ justifyContent: "center", position: "relative", zIndex: 5 }}>
-          <Document
-            file={pdf}
-            onLoadSuccess={onDocumentLoadSuccess}
-            loading={
-              <div className="text-center text-white my-4">
-                <div className="spinner-border text-light mb-2" role="status"></div>
-                <p>Loading CV document...</p>
-              </div>
-            }
-            error={
-              <div className="text-center text-white my-4">
-                <p>Could not load the PDF document. Please click "Download CV" to view.</p>
-              </div>
-            }
-            className="d-flex flex-column align-items-center"
-          >
-            {Array.from(new Array(numPages || 0), (el, index) => (
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={width > 786 ? 1.7 : 0.6}
-                className="mb-4 shadow-lg rounded"
-                renderTextLayer={false}
-                renderAnnotationLayer={false}
-              />
-            ))}
-          </Document>
-        </Row>
+          {/* Download Button - Centered and Prominent */}
+          <Row style={{ justifyContent: "center", position: "relative", marginBottom: "50px", zIndex: 10 }}>
+            <Col md={4} style={{ textAlign: "center" }}>
+              <Button
+                className="resume-download-btn"
+                href={pdf}
+                download
+                style={{ 
+                  width: "100%",
+                  padding: "15px 40px",
+                  fontSize: "1.1em",
+                  fontWeight: "600"
+                }}
+              >
+                <AiOutlineDownload style={{ marginRight: "10px" }} />
+                Download CV
+              </Button>
+            </Col>
+          </Row>
 
-        {/* Bottom Download Button */}
-        <Row style={{ justifyContent: "center", position: "relative", marginTop: "30px", zIndex: 10 }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px", pointerEvents: "auto", cursor: "pointer" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+          {/* Resume Info Cards */}
+          <Row style={{ justifyContent: "center", marginTop: "40px", marginBottom: "40px" }}>
+            <Col md={3} className="resume-info-card">
+              <div className="resume-info-content">
+                <h4 className="purple">📧 Email</h4>
+                <p>chaminduwn@gmail.com</p>
+              </div>
+            </Col>
+            <Col md={3} className="resume-info-card">
+              <div className="resume-info-content">
+                <h4 className="purple">📱 Phone</h4>
+                <p>+94 77 2328 901</p>
+              </div>
+            </Col>
+            <Col md={3} className="resume-info-card">
+              <div className="resume-info-content">
+                <h4 className="purple">🔗 Portfolio</h4>
+                <p>chamindu-wn.vercel.app</p>
+              </div>
+            </Col>
+          </Row>
+
+          {/* Quick Links */}
+          <Row style={{ justifyContent: "center", marginTop: "30px", marginBottom: "50px" }}>
+            <Col md={6} style={{ textAlign: "center" }}>
+              <p style={{ color: "#b0b0b0", marginBottom: "15px" }}>
+                Find me on:
+              </p>
+              <div className="social-links">
+                <a href="https://github.com/ChaminduWn" className="link-btn" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/chamindu-wn" className="link-btn" target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </Container>
     </div>
   );

@@ -1,0 +1,156 @@
+/* Resume Component Styles */
+
+.resume-container {
+  padding: 40px 20px;
+}
+
+.resume-heading {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.resume-subtitle {
+  font-size: 1.1em;
+  color: #b0b0b0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Download Button Styling */
+.resume-download-btn {
+  background: linear-gradient(135deg, #0BA5A8 0%, #0d9499 100%);
+  border: none;
+  color: #ffffff;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(11, 165, 168, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.resume-download-btn:hover {
+  background: linear-gradient(135deg, #2DADE2 0%, #0BA5A8 100%);
+  box-shadow: 0 6px 20px rgba(11, 165, 168, 0.5);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.resume-download-btn:active {
+  transform: translateY(0);
+}
+
+/* Resume Info Cards */
+.resume-info-card {
+  margin-bottom: 20px;
+}
+
+.resume-info-content {
+  background: linear-gradient(135deg, rgba(11, 165, 168, 0.1) 0%, rgba(45, 173, 226, 0.1) 100%);
+  border: 1px solid rgba(11, 165, 168, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.resume-info-content:hover {
+  background: linear-gradient(135deg, rgba(11, 165, 168, 0.2) 0%, rgba(45, 173, 226, 0.2) 100%);
+  border-color: rgba(11, 165, 168, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(11, 165, 168, 0.2);
+}
+
+.resume-info-content h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.resume-info-content p {
+  color: #d0d0d0;
+  font-size: 0.95em;
+  margin-bottom: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, rgba(11, 165, 168, 0.2) 0%, rgba(45, 173, 226, 0.2) 100%);
+  border: 1.5px solid #0BA5A8;
+  color: #0BA5A8;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+.link-btn:hover {
+  background: linear-gradient(135deg, #0BA5A8 0%, #2DADE2 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(11, 165, 168, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-heading {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .resume-subtitle {
+    font-size: 0.95em;
+  }
+
+  .resume-info-card {
+    margin-bottom: 15px;
+  }
+
+  .resume-info-content {
+    padding: 20px;
+  }
+
+  .resume-download-btn {
+    font-size: 0.95em;
+    padding: 12px 30px !important;
+  }
+
+  .link-btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-heading {
+    font-size: 1.5em;
+  }
+
+  .resume-container {
+    padding: 20px 10px;
+  }
+
+  .resume-info-content {
+    padding: 15px;
+  }
+}

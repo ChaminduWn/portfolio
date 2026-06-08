@@ -1,21 +1,22 @@
 html {
   --section-background-color: linear-gradient(
     to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
+    rgba(13, 27, 42, 0.7),
+    rgba(10, 20, 35, 0.95)
   );
 
   --image-gradient: linear-gradient(
     to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
+    rgba(13, 27, 42, 0.75),
+    rgba(10, 20, 35, 0.92)
   );
 
-  --imp-text-color: #c770f0;
+  --imp-text-color: #0BA5A8;
 }
 
 .purple {
   color: var(--imp-text-color) !important;
+  font-weight: 600;
 }
 
 button:focus {
@@ -404,7 +405,7 @@ button:focus {
 }
 
 .icon-colour {
-  color: #700c86 !important;
+  color: #0BA5A8 !important;
 }
 
 /* --------- */
@@ -448,7 +449,7 @@ button:focus {
 }
 
 .blockquote-footer {
-  color: #a588c0 !important;
+  color: #2DADE2 !important;
 }
 /* --------- */
 /* Projects */
@@ -488,7 +489,7 @@ button:focus {
 .project-filters input {
   background: rgba(255, 255, 255, 0.15);
   color: white;
-  border: 2px solid #8a49a8;
+  border: 2px solid #0BA5A8;
   border-radius: 8px;
   padding: 12px 20px;
   font-size: 1rem;
@@ -502,8 +503,8 @@ button:focus {
 .project-filters input:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.2);
-  border-color: #c770f0;
-  box-shadow: 0 0 15px rgba(199, 112, 240, 0.5);
+  border-color: #0BA5A8;
+  box-shadow: 0 0 15px rgba(11, 165, 168, 0.5);
 }
 
 /* ===== FILTER BUTTONS ===== */
@@ -531,17 +532,17 @@ button:focus {
 }
 
 .btn-active {
-  background-color: #c770f0;
+  background-color: #0BA5A8;
   color: white;
-  border-color: #c770f0;
-  box-shadow: 0 4px 15px rgba(199, 112, 240, 0.4);
+  border-color: #0BA5A8;
+  box-shadow: 0 4px 15px rgba(11, 165, 168, 0.4);
 }
 
 .btn-active:hover {
-  background-color: #b65cd9;
-  border-color: #b65cd9;
+  background-color: #2DADE2;
+  border-color: #2DADE2;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(199, 112, 240, 0.6);
+  box-shadow: 0 6px 20px rgba(11, 165, 168, 0.6);
 }
 
 .btn-inactive {
@@ -552,7 +553,7 @@ button:focus {
 
 .btn-inactive:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  border-color: #c770f0;
+  border-color: #0BA5A8;
   transform: translateY(-2px);
 }
 
@@ -579,7 +580,7 @@ button:focus {
 .project-card-view:hover {
   transform: translateY(-8px) !important;
   box-shadow: 0 12px 30px rgba(199, 112, 240, 0.4) !important;
-  border-color: #c770f0 !important;
+  border-color: #0BA5A8 !important;
 }
 
 .project-card-view img {
@@ -633,16 +634,16 @@ button:focus {
 }
 
 .project-card-view .btn-primary {
-  background-color: #c770f0;
+  background-color: #0BA5A8;
   color: white;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
 .project-card-view .btn-primary:hover {
-  background-color: #a64dd3;
+  background-color: #2DADE2;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(199, 112, 240, 0.5);
+  box-shadow: 0 4px 12px rgba(11, 165, 168, 0.5);
 }
 
 .project-card-view .btn-primary:active {
@@ -677,7 +678,7 @@ button:focus {
 /* ===== ACCESSIBILITY ===== */
 .filter-buttons button:focus,
 .project-card-view .btn:focus {
-  outline: 2px solid #c770f0;
+  outline: 2px solid #0BA5A8;
   outline-offset: 2px;
 }
 
@@ -777,12 +778,12 @@ position: relative;
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
-  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+  border: 1.7px solid rgba(11, 165, 168, 0.5) !important;
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  box-shadow: 4px 5px 4px 3px rgba(11, 165, 168, 0.15) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
@@ -796,7 +797,7 @@ position: relative;
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+  border: 2.2px solid rgba(11, 165, 168, 0.8) !important;
 }
 .tech-icon-images {
   padding: 20px !important;
@@ -836,7 +837,7 @@ position: relative;
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 50px !important;
-  background-color: #2a1a3d; /* Darker purple background */
+  background-color: #0d1b2a; /* Modern navy background */
   color: #ffffff !important;
   min-height: 100vh;
 }
@@ -871,21 +872,21 @@ position: relative;
   font-size: 2em;
   font-weight: 700;
   padding: 30px 0;
-  color: #d1b3ff; /* light purple for headings */
-  border-bottom: 2px solid #8a49a8;
+  color: #2DADE2; /* light blue for headings */
+  border-bottom: 2px solid #0BA5A8;
 }
 
 /* Resume Items */
 .resume .resume-item {
   padding: 0 0 15px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8; /* highlight line */
+  border-left: 2px solid #0BA5A8; /* highlight line */
   position: relative;
   transition: all 0.3s ease;
 }
 
 .resume .resume-item:hover {
-  background: rgba(82, 52, 121, 0.2); /* subtle hover effect */
+  background: rgba(11, 165, 168, 0.15);
   padding-left: 30px;
 }
 
@@ -893,7 +894,7 @@ position: relative;
 .resume .resume-item .resume-title {
   line-height: 18px;
   font-size: 1em;
-  background: rgba(82, 52, 121, 0.6);
+  background: rgba(11, 165, 168, 0.25);
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
@@ -916,7 +917,7 @@ position: relative;
 
 .resume .resume-item ul li::before {
   content: "•";
-  color: #d1b3ff;
+  color: #2DADE2;
   font-weight: bold;
   display: inline-block;
   width: 1em;
@@ -938,22 +939,22 @@ position: relative;
   left: -9px;
   top: 0;
   background: #ffffff;
-  border: 2px solid #8a49a8;
+  border: 2px solid #0BA5A8;
 }
 
 /* Buttons */
 .resume-section .btn-primary {
-  background-color: #8a49a8;
-  border-color: #8a49a8;
+  background-color: #0BA5A8;
+  border-color: #0BA5A8;
   color: #ffffff;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .resume-section .btn-primary:hover {
-  background-color: #d1b3ff;
-  border-color: #d1b3ff;
-  color: #2a1a3d;
+  background-color: #2DADE2;
+  border-color: #2DADE2;
+  color: #ffffff;
 }
 
 .like-item {
